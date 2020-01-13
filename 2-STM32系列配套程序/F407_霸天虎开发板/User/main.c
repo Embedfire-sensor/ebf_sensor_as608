@@ -30,9 +30,13 @@
   */
 int main(void)
 {		
+  /* 滴答定时器初始化 */
+  SysTick_Init();
+  
   /*初始化USART 配置模式为 115200 8-N-1，中断接收*/
   Debug_USART_Config();
   
+  /* LED 初始化 */
   LED_GPIO_Config();	
   
   /*初始化环形缓冲区*/

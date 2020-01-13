@@ -33,6 +33,7 @@
 #include "./usart/rx_data_queue.h"
 #include "./led/bsp_led.h"
  
+extern void TimingDelay_Decrement(void);
 
 /** @addtogroup STM32F429I_DISCOVERY_Examples
   * @{
@@ -133,6 +134,16 @@ void SVC_Handler(void)
   */
 void PendSV_Handler(void)
 {}
+  
+/**
+* @brief  This function handles SysTick Handler.
+* @param  None
+* @retval None
+*/
+void SysTick_Handler(void)
+{
+	TimingDelay_Decrement();
+}
   
   /**
   * @brief  TouchOutÒý½ÅEXTIÖÐ¶Ï
